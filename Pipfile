@@ -1,0 +1,36 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.6"
+
+[packages]
+django = "*"
+"psycopg2" = "*"
+django-autocomplete-light = "*"
+django-suit = {git = "https://github.com/darklow/django-suit.git", editable = true, ref = "v2"}
+djangorestframework = "*"
+drfdocs = "*"
+django-filter = "*"
+django-imagekit = "*"
+pillow = "*"
+django-autoslugfield = {git = "https://github.com/mireq/django-autoslugfield.git", editable = true}
+django-multiselectfield = {git = "https://github.com/flaviopifiator/django-multiselectfield.git", editable = true}
+django-tinymce = "*"
+"psycopg2-binary" = "*"
+django-leaflet = "*"
+djangorestframework-gis = "*"
+django-heroku = "*"
+gunicorn = "*"
+django-extensions = "*"
+
+[dev-packages]
+pyparsing = "*"
+pydot = "*"
+pygraphviz = "*"
+"pep8" = "*"
+"flake8" = "*"
+ipython = "*"
+pylint = "*"

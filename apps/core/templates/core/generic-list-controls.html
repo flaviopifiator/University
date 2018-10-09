@@ -1,0 +1,13 @@
+{% load url_admin from url_actions %}
+
+<div class="btn-group" role="group" style="display: flex !important;">
+    
+    {% if instance.get_absolute_url %}
+        <a href="{{ instance|url_admin:'detail' }}" class="btn btn-outline-primary  btn-sm">Detalle</a>
+    {% endif %}
+
+    {% if has_change_permission %}
+        <a href="{{ instance|url_admin:'change' }}" class="btn btn-outline-warning btn-sm">Modificar</a>
+    {% endif %}    
+
+</div>

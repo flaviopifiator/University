@@ -1,0 +1,56 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+{% load url_admin from url_actions %}
+
+
+{% block content %}
+    
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <h3 class="card-header">
+                    Detalle: {{ object|truncatechars:20 }}
+                </h3>
+                <div class="card-block">
+                    {% block content-detail %}
+                        
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Controles
+                </div>
+                <div class="card-block">
+                    <ul class='unstyle'>
+                        <li>
+                            {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+                            <a href="{% add_preserved_filters history_url %}">Historia</a>
+                        </li>
+                        
+                        {% if has_change_permission %}
+                            <li>
+                                <a href="{{ object|url_admin:'change' }}">Editar Registro</a>
+                            </li>
+                        {% endif %}
+
+                        {% if has_delete_permission %}
+                            <li>
+                                <a href="{{ object|url_admin:'delete' }}">Eliminar Registro</a>
+                            </li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+
+            {% block sidebar %}
+                
+            {% endblock %}
+        </div>
+    </div>
+    
+{% endblock %}
