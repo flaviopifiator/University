@@ -165,9 +165,8 @@ LEAFLET_CONFIG = {
     'SPATIAL_EXTENT': (-65.78671, -28.46116, -65.77828, -28.45681),
 }
 
-GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
-
+GDAL_LIBRARY_PATH = '{}/libgdal.so'.format(os.getenv('GDAL_LIBRARY_PATH'))
+GEOS_LIBRARY_PATH = '{}/libgeos_c.so'.format(os.getenv('GEOS_LIBRARY_PATH'))
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
