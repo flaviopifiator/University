@@ -92,7 +92,11 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=True))
+DATABASES['default'] = dj_database_url.config(
+    conn_max_age=600,
+    default='postgis://localhost:5432/{}'.format('universidad-catamarca')
+)
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -160,8 +164,8 @@ LEAFLET_CONFIG = {
     'SPATIAL_EXTENT': (-65.78671, -28.46116, -65.77828, -28.45681),
 }
 
-GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
-GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
 
 
 # Activate Django-Heroku.

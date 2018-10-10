@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib.gis import admin
 from django.utils import timezone
 from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
