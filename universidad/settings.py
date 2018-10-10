@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # User Custom
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'apps.user.User'
 
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste,searchreplace",
