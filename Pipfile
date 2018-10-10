@@ -8,6 +8,7 @@ python_version = "3.6"
 
 [packages]
 django = "*"
+"psycopg2-binary" = "*"
 "psycopg2" = "*"
 django-autocomplete-light = "*"
 django-suit = {git = "https://github.com/darklow/django-suit.git", editable = true, ref = "v2"}
@@ -19,7 +20,6 @@ pillow = "*"
 django-autoslugfield = {git = "https://github.com/mireq/django-autoslugfield.git", editable = true}
 django-multiselectfield = {git = "https://github.com/flaviopifiator/django-multiselectfield.git", editable = true}
 django-tinymce = "*"
-"psycopg2-binary" = "*"
 django-leaflet = "*"
 djangorestframework-gis = "*"
 django-heroku = "*"

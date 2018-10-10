@@ -15,7 +15,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
-        'dal',
+    'dal',
     'dal_select2',
     'apps.core.apps.SuitConfig',
     'django.contrib.admin',
