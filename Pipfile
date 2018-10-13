@@ -24,6 +24,7 @@ django-leaflet = "*"
 djangorestframework-gis = "*"
 gunicorn = "*"
 django-extensions = "*"
+django-rest-framework-redocs = "*"
 
 [dev-packages]
 pyparsing = "*"

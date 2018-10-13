@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b8fbaa9dc4d242caf169789ecd4d4897885d4df92e35487085aa4e0ac63b62d7"
+            "sha256": "c04a188e8a9ef4b07d54d531e402476cd50762a9a256b5e0fea94b13b76bca16"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -76,6 +76,13 @@
         "django-multiselectfield": {
             "editable": true,
             "git": "https://github.com/flaviopifiator/django-multiselectfield.git"
+        },
+        "django-rest-framework-redocs": {
+            "hashes": [
+                "sha256:6e790e05115c37e337d1641b651dbab9686e2acce070ffe61d5be469e0257c96"
+            ],
+            "index": "pypi",
+            "version": "==0.0.5"
         },
         "django-suit": {
             "editable": true,

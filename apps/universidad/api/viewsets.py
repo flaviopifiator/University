@@ -13,12 +13,18 @@ class UniversidadListView(generics.ListAPIView):
 
 
 class UniversidadRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de Universidad
+    '''
     lookup_field = 'slug'
     queryset = models.Universidad
     serializer_class = serializers.UniversidadSerializer
 
 
 class AulaRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de Aula
+    '''
     lookup_field = 'slug'
     queryset = models.Aula
     serializer_class = serializers.AulaSerializer

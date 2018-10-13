@@ -26,7 +26,7 @@ INSTALLED_APPS = [
 
     # Aplicaciones de terceros
     'rest_framework',
-    'rest_framework_docs',
+    'redocs',
     'django_filters',   # filters for drf.
     'imagekit',
     'django_autoslugfield',

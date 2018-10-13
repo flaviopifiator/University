@@ -8,11 +8,17 @@ from .. import models
 
 
 class FacultadListView(generics.ListAPIView):
+    '''
+    Listado de Facultades
+    '''
     queryset = models.Facultad.objects.all()
     serializer_class = serializers.FacultadListSerializer
 
 
 class FacultadRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de Facultad
+    '''
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
     queryset = models.Facultad
@@ -20,11 +26,17 @@ class FacultadRetrieveView(generics.RetrieveAPIView):
 
 
 class DepartamentoFacultadListView(generics.ListAPIView):
+    '''
+    Listado de Departamentos
+    '''
     queryset = models.DepartamentoFacultad.objects.all()
     serializer_class = serializers.DepartamentoListSerializer
 
 
 class DepartamentoFacultadRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de un Departamento de una Facultad
+    '''
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
     queryset = models.DepartamentoFacultad
@@ -32,11 +44,17 @@ class DepartamentoFacultadRetrieveView(generics.RetrieveAPIView):
 
 
 class CarreraListView(generics.ListAPIView):
+    '''
+    Listado de Carreras
+    '''
     queryset = models.Carrera.objects.all()
     serializer_class = serializers.CarreraListSerializer
 
 
 class CarreraRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de una Carrera
+    '''
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
     queryset = models.Carrera
@@ -44,11 +62,17 @@ class CarreraRetrieveView(generics.RetrieveAPIView):
 
 
 class ProfesorListView(generics.ListAPIView):
+    '''
+    Listado de Profesores Activos
+    '''
     queryset = models.Profesor.activos.all()
     serializer_class = serializers.ProfesorListSerializer
 
 
 class ProfesorRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de un Profesor
+    '''
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
     queryset = models.Profesor.activos.all()
@@ -56,11 +80,17 @@ class ProfesorRetrieveView(generics.RetrieveAPIView):
 
 
 class PlanEstudioListView(generics.ListAPIView):
+    '''
+    Listado de Planes de Estudio
+    '''
     queryset = models.PlanEstudio.objects.all()
     serializer_class = serializers.PlanEstudioListSerializer
 
 
 class PlanEstudioRetrieveView(generics.RetrieveAPIView):
+    '''
+    Detalle de un Plan de Estudio
+    '''
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
     queryset = models.PlanEstudio.objects.all()

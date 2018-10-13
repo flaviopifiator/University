@@ -17,6 +17,7 @@ urlpatterns = [
     # Endpoint to apis.
     path('api-auth/', include('rest_framework.urls')),
     path('api/v1/', include('apps.core.urls_api', namespace='api-v1')),
+    path('docs/', include('redocs.urls')),
     
 ]
 
