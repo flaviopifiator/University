@@ -1,6 +1,4 @@
 import os
-import dj_database_url
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +22,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.gis',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     # Aplicaciones de terceros
@@ -48,7 +45,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,22 +78,16 @@ WSGI_APPLICATION = 'universidad.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#        'NAME': 'universidad',
-#        'USER': 'universidad',
-#        'PASSWORD': 'universidad_123qwe',
-#        'HOST': '127.0.0.1',
-#        'PORT': '5432',
-#    }
-#}
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(
-    conn_max_age=600,
-    default='postgis://localhost:5432/{}'.format('universidad')
-)
-DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'universidad',
+        'USER': 'universidad',
+        'PASSWORD': 'universidad_123qwe',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -138,14 +128,14 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
 
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # User Custom
 AUTH_USER_MODEL = 'user.User'
@@ -165,8 +155,6 @@ LEAFLET_CONFIG = {
     'SPATIAL_EXTENT': (-65.78671, -28.46116, -65.77828, -28.45681),
 }
 
-GDAL_LIBRARY_PATH = '{}/libgdal.so'.format(os.getenv('GDAL_LIBRARY_PATH'))
-GEOS_LIBRARY_PATH = '{}/libgeos_c.so'.format(os.getenv('GEOS_LIBRARY_PATH'))
+GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())

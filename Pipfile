@@ -22,7 +22,6 @@ django-multiselectfield = {git = "https://github.com/flaviopifiator/django-multi
 django-tinymce = "*"
 django-leaflet = "*"
 djangorestframework-gis = "*"
-django-heroku = "*"
 gunicorn = "*"
 django-extensions = "*"
 
