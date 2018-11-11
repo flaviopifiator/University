@@ -170,7 +170,7 @@ class Horario(models.Model):
     inicio = models.TimeField(null=True, blank=True)
     fin = models.TimeField(null=True, blank=True)
 
-    dias = MultiSelectField(choices=DIAS, max_length=14, null=True, blank=True)
+    dias = MultiSelectField(choices=DIAS, max_length=250, null=True, blank=True)
 
     content_type = models.ForeignKey(
         ContentType,
